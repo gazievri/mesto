@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pages/index.css">
+    <title>Место</title>
+</head>
+
+<body>
+
+  <div class="root">
+
+    <header class="header">
+      <img class="logo" src="./images/logo.svg" alt="Логотип проекта">
+    </header>
+
+    <main>
+      <section class="profile">
+
+        <img class="profile__avatar" src="./images/avatar.jpg" alt="Жак Ив Кусто">
+        <div class="profile__profile-info">
+          <div class="profile__title-and-button">
+            <h1 class="profile__title">Жак&#8209;Ив&nbsp;Кусто</h1>
+            <button class="profile__edit-button" type="button"></button>
+          </div>
+          <p class="profile__subtitle">Исследователь океана</p>
+        </div>
+        <button class="profile__button" type="submit"></button>
+
+      </section>
+
+      <section class="elements">
+
+        <div class="element">
+          <img class="element__pic" src="./images/element-pic-karacha.jpg" alt="Карачаевск">
+          <div class="element__title">
+            <h2 class="element__title-text">Карачаевск</h2>
+            <div class="element__title-like"></div>
+          </div>
+        </div>
+
+        <div class="element">
+          <img class="element__pic" src="./images/element-pic-elbrus.png" alt="Гора Эльбрус">
+          <div class="element__title">
+            <h2 class="element__title-text">Гора Эльбрус</h2>
+            <div class="element__title-like"></div>
+          </div>
+        </div>
+
+        <div class="element">
+          <img class="element__pic" src="./images/element-pic-dombai.png" alt="Домбай">
+          <div class="element__title">
+            <h2 class="element__title-text">Домбай</h2>
+            <div class="element__title-like"></div>
+          </div>
+        </div>
+
+        <div class="element">
+          <img class="element__pic" src="./images/element-pic-elbrus-two.png" alt="Гора Эльбрус">
+          <div class="element__title">
+            <h2 class="element__title-text">Гора Эльбрус</h2>
+            <div class="element__title-like"></div>
+          </div>
+        </div>
+
+        <div class="element">
+          <img class="element__pic" src="./images/element-pic-dombai-two.png" alt="Домбай">
+          <div class="element__title">
+            <h2 class="element__title-text">Домбай</h2>
+            <div class="element__title-like"></div>
+          </div>
+        </div>
+
+        <div class="element">
+          <img class="element__pic" src="./images/element-pic-karachaev-cherkesk.png" alt="Карачаевск">
+          <div class="element__title">
+            <h2 class="element__title-text">Карачаевск</h2>
+            <div class="element__title-like"></div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="footer">
+        <p class="footer__copy">&copy; 2022. Руслан Газиев</p>
+      </div>
+    </footer>
+
+    <div class="popup">
+      <form class="popup__container" action="#" method="get">
+        <button class="popup__close" type="submit"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <p class="popup__name">
+          <input class="popup__input popup__input-user" type="text" name="name" id="name" required>
+        </p>
+        <p class="popup__occupation">
+          <input class="popup__input popup__input-occupation" type="text" name="occupation" id="occupation" required>
+        </p>
+        <button class="popup__button" type="submit">Сохранить</button>
+      </form>>
+    </div>
+
+  </div>
+
+  <script src="./scripts/main.js"></script>
+
+</body>
+</html>
