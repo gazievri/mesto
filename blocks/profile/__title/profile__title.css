@@ -1,23 +1,28 @@
 .profile__title {
   color: #fff;
-  font-family: Inter;
+  font-family: Inter, Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 42px;
   line-height: 114%;
   margin: 0;
+  text-overflow: ellipsis;
+  max-width: 294px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 @media (max-width: 450px) {
   .profile__title {
     font-size: 8.3vw;
     line-height: 33px;
+    max-width: 250px;
   }
 }
 
 @media (max-width: 320px) {
   .profile__title {
     font-size: 27px;
-    line-height: 33px;
+    max-width: 190px;
   }
 }

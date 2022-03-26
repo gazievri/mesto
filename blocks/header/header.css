@@ -2,7 +2,7 @@
   margin: 0 auto 40px;
   max-width: 880px;
   min-height: 74px;
-  border-bottom: 1px solid #545454;
+  border-bottom: 1px solid rgba(84,84,84,0.7);
 }
 
 @media (max-width: 320px) {

@@ -5,9 +5,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   transition: 0.3s;
+  border: 0;
+  background-color: transparent;
 }
 
 .element__title-like:hover {
-  opacity: 0.6;
-  cursor: url("../../../images/pointer.png"), auto;
+  opacity: 0.5;
+  cursor: auto;
 }

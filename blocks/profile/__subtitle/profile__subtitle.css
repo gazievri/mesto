@@ -1,34 +1,37 @@
 .profile__subtitle {
-  font-family: Inter;
+  font-family: Inter, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
   color: #FFFFFF;
   margin: 0;
+  text-overflow: ellipsis;
+  max-width: 336px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 @media (max-width: 522px) {
   .profile__subtitle {
     text-align: center;
     margin-top: 7px;
+    max-width: 350px;
   }
 }
 
 @media (max-width: 450px) {
   .profile__subtitle {
     font-size: 3.5vw;
+    max-width: 300px;
   }
 }
 
 @media (max-width: 320px) {
   .profile__subtitle {
-    font-family: Inter;
-    font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
-    text-align: center;
-    margin-top: 7px;
+    max-width: 282px;
   }
 }
