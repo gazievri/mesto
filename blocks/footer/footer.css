@@ -9,6 +9,20 @@
   color: #545454;
 }
 
+@media (max-width: 917px) {
+  .footer {
+    max-width: 581px;
+  }
+}
+
+
+@media (max-width: 618px) {
+  .footer {
+    max-width: 282px;
+  }
+}
+
+
 @media (max-width: 320px) {
   .footer {
     margin: 48px 19px 0;
