@@ -19,7 +19,7 @@
 }
 
 @media (max-width: 570px) {
-  .popup__input {
+  .popup__input-occupation {
     width: 238px;
     margin: 0 22px 45px;
   }
