@@ -12,5 +12,5 @@
 
 .element__title-like:hover {
   opacity: 0.5;
-  cursor: auto;
+  cursor: pointer;
 }

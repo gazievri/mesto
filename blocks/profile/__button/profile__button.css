@@ -13,7 +13,7 @@
 
 .profile__button:hover {
   opacity: 0.6;
-  cursor: url("../../../images/pointer.png"), auto;
+  cursor: pointer;
 }
 
 @media (max-width: 710px) {

@@ -1,4 +1,4 @@
-.popup__input-user {
+.popup__input {
   width: 358px;
   height: 27px;
   border: 0;
@@ -19,7 +19,7 @@
 }
 
 @media (max-width: 570px) {
-  .popup__input-user {
+  .popup__input {
     width: 238px;
     margin-left: 22px;
   }

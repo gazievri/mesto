@@ -3,13 +3,10 @@ const popupOpen = document.querySelector('.profile__edit-button');
 const popupClose = popup.querySelector('.popup__close');
 
 let formElement = document.querySelector('.popup__form');
-const nameInput = document.querySelector('.popup__input-user');
-const jobInput = document.querySelector('.popup__input-occupation');
+const nameInput = document.querySelector('.popup__input_field_name');
+const jobInput = document.querySelector('.popup__input_field_occupation');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
-
-
-
 
 function openPopup() {
   popup.classList.add('popup_opened');  //открываем попап
