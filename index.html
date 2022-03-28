@@ -22,7 +22,7 @@
         <img class="profile__avatar" src="./images/avatar.jpg" alt="Жак Ив Кусто">
         <div class="profile__profile-info">
           <div class="profile__title-and-button">
-            <h1 class="profile__title">Жак&#8209;Ив&nbsp;Кусто</h1>
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
             <button class="profile__edit-button" type="button" aria-label="Редактировать профиль"></button>
           </div>
           <p class="profile__subtitle">Исследователь океана</p>
@@ -32,8 +32,9 @@
       </section>
 
       <section class="elements">
-
+<!--
         <article class="element">
+          <button class="element__bin" type="button"></button>
           <img class="element__pic" src="./images/element-pic-karacha.jpg" alt="Карачаевск">
           <div class="element__title">
             <h2 class="element__title-text">Карачаевск</h2>
@@ -42,6 +43,7 @@
         </article>
 
         <article class="element">
+          <button class="element__bin" type="button"></button>
           <img class="element__pic" src="./images/element-pic-elbrus.png" alt="Гора Эльбрус">
           <div class="element__title">
             <h2 class="element__title-text">Гора Эльбрус</h2>
@@ -50,6 +52,7 @@
         </article>
 
         <article class="element">
+          <button class="element__bin" type="button"></button>
           <img class="element__pic" src="./images/element-pic-dombai.png" alt="Домбай">
           <div class="element__title">
             <h2 class="element__title-text">Домбай</h2>
@@ -58,6 +61,7 @@
         </article>
 
         <article class="element">
+          <button class="element__bin" type="button"></button>
           <img class="element__pic" src="./images/element-pic-elbrus-two.png" alt="Гора Эльбрус">
           <div class="element__title">
             <h2 class="element__title-text">Гора Эльбрус</h2>
@@ -66,6 +70,7 @@
         </article>
 
         <article class="element">
+          <button class="element__bin" type="button"></button>
           <img class="element__pic" src="./images/element-pic-dombai-two.png" alt="Домбай">
           <div class="element__title">
             <h2 class="element__title-text">Домбай</h2>
@@ -74,13 +79,14 @@
         </article>
 
         <article class="element">
+          <button class="element__bin" type="button"></button>
           <img class="element__pic" src="./images/element-pic-karachaev-cherkesk.png" alt="Карачаевск">
           <div class="element__title">
             <h2 class="element__title-text">Карачаевск</h2>
             <button class="element__title-like" type="button"></button>
           </div>
         </article>
-
+-->
       </section>
 
     </main>
@@ -101,7 +107,25 @@
       </div>
     </div>
 
+
+
+
+
+
   </div>
+
+
+  <template class="element-template">
+    <article class="element">
+      <button class="element__bin" type="button"></button>
+      <img class="element__pic" src="" alt="">
+      <div class="element__title">
+        <h2 class="element__title-text"></h2>
+        <button class="element__title-like" type="button"></button>
+      </div>
+    </article>
+  </template>
+
 
   <script src="./scripts/index.js"></script>
 
