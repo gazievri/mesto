@@ -5,7 +5,7 @@
   column-gap: 17px;
   margin: 0 auto 0;
   max-width: 880px;
-  justify-content: center;
+  justify-content: start;
 }
 
 @media (max-width: 320px) {

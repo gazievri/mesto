@@ -107,7 +107,25 @@
       </div>
     </div>
 
+    <div class="popup place">
+      <div class="popup__container">
+        <button class="popup__close" type="button"></button>
+        <form class="popup__form-place" name="place" action="#" method="get">
+          <h2 class="popup__title">Новое место</h2>
+          <input class="popup__input popup__input_field_place" placeholder="Название" type="text" name="place" id="place" required>
+          <input class="popup__input popup__input_field_link" placeholder="Ссылка на картинку" type="text" name="link" id="link" required>
+          <button class="popup__button" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
 
+    <div class="image-popup">
+      <div class="image-popup__container">
+        <button class="image-popup__close" type="button"></button>
+        <img class="image-popup_img" src="#" alt="">
+        <h2 class="image-popup_title"></h2>
+      </div>
+    </div>
 
 
 
@@ -115,7 +133,7 @@
   </div>
 
 
-  <template class="element-template">
+  <template id="element-template">
     <article class="element">
       <button class="element__bin" type="button"></button>
       <img class="element__pic" src="" alt="">
@@ -127,7 +145,9 @@
   </template>
 
 
+
   <script src="./scripts/index.js"></script>
+
 
 </body>
 </html>
