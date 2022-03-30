@@ -1,11 +1,12 @@
 .elements {
   display: flex;
   flex-wrap: wrap;
+
   row-gap: 20px;
   column-gap: 17px;
   margin: 0 auto 0;
   max-width: 880px;
-  justify-content: start;
+  justify-content: center;
 }
 
 @media (max-width: 320px) {
