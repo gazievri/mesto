@@ -1,3 +1,8 @@
+//Очень нужна помощь с ревью. Не получается реализовать все функции до конца. 
+
+
+
+
 
 const popup = document.querySelector('.popup');
 const popups = document.querySelectorAll('.popup');
@@ -11,12 +16,12 @@ const profileSubtitle = document.querySelector('.profile__subtitle');
 const cardsContainer = document.querySelector('.elements');
 
 
-//Универсальная функция открытия
+//Универсальная функция открытия (не работает)
 function openPopup() {
   popup.classList.add('popup_opened');
 }
 
-//Универсальная функция закрытия
+//Универсальная функция закрытия (не работает)
 function closePopup() {
   popup.classList.remove('popup_opened');
 }
@@ -188,4 +193,3 @@ function renderInitialCards() {
 }
 
 renderInitialCards();
-
