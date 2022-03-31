@@ -1,19 +1,4 @@
 .popup__container {
-  position: relative;
-  box-sizing: border-box;
-  background-color: #fff;
-  border-radius: 3%;
-  width: 100%;
-  max-width: 430px;
-  padding-top: 34px;
-  padding-bottom: 37px;
-}
 
-@media (max-width: 570px) {
-  .popup__container {
-    width: 100%;
-    max-width: 282px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-  }
+  position: relative;
 }

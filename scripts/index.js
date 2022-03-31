@@ -1,4 +1,4 @@
-//Очень нужна помощь с ревью. Не получается реализовать все функции до конца. 
+//Очень нужна помощь с ревью. Не получается реализовать все функции до конца.
 
 
 
@@ -130,8 +130,8 @@ function removeCard(event) {
 //Функция просмотра картинки в карточке
 
 const popupImage = document.querySelector('.popup_type_view-image');
-const popupImagePic = document.querySelector('.image-popup__img');
-const popupImageTitle = document.querySelector('.image-popup__title');
+const popupImagePic = document.querySelector('.popup__img');
+const popupImageTitle = document.querySelector('.popup__img-title');
 const closeBatton = document.querySelector('popup__close');
 
 function openImagePopup(cardPic) {

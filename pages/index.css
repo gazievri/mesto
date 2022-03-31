@@ -39,11 +39,15 @@
 @import url(../blocks/popup/__input/_field/popup__input_field_name.css);
 @import url(../blocks/popup/__input/_field/popup__input_field_occupation.css);
 @import url(../blocks/popup/_type/popup_type_view-image.css);
+@import url(../blocks/popup/__img/popup__img.css);
+@import url(../blocks/popup/__img-title/popup__img-title.css);
+@import url(../blocks/popup/__container/_type/popup__container_type_all.css);
+@import url(../blocks/popup/__container/_type/popup__container_type_img.css);
 
 
-@import url(..//blocks/image-popup/__title/image-popup__title.css);
+
 @import url(..//blocks/image-popup/__container/image-popup__container.css);
-@import url(..//blocks/image-popup/__image/image-popup__img.css);
+
 
 
 
