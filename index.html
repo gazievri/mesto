@@ -31,63 +31,7 @@
 
       </section>
 
-      <section class="elements">
-<!--
-        <article class="element">
-          <button class="element__bin" type="button"></button>
-          <img class="element__pic" src="./images/element-pic-karacha.jpg" alt="Карачаевск">
-          <div class="element__title">
-            <h2 class="element__title-text">Карачаевск</h2>
-            <button class="element__title-like" type="button"></button>
-          </div>
-        </article>
-
-        <article class="element">
-          <button class="element__bin" type="button"></button>
-          <img class="element__pic" src="./images/element-pic-elbrus.png" alt="Гора Эльбрус">
-          <div class="element__title">
-            <h2 class="element__title-text">Гора Эльбрус</h2>
-            <button class="element__title-like" type="button"></button>
-          </div>
-        </article>
-
-        <article class="element">
-          <button class="element__bin" type="button"></button>
-          <img class="element__pic" src="./images/element-pic-dombai.png" alt="Домбай">
-          <div class="element__title">
-            <h2 class="element__title-text">Домбай</h2>
-            <button class="element__title-like" type="button"></button>
-          </div>
-        </article>
-
-        <article class="element">
-          <button class="element__bin" type="button"></button>
-          <img class="element__pic" src="./images/element-pic-elbrus-two.png" alt="Гора Эльбрус">
-          <div class="element__title">
-            <h2 class="element__title-text">Гора Эльбрус</h2>
-            <button class="element__title-like" type="button"></button>
-          </div>
-        </article>
-
-        <article class="element">
-          <button class="element__bin" type="button"></button>
-          <img class="element__pic" src="./images/element-pic-dombai-two.png" alt="Домбай">
-          <div class="element__title">
-            <h2 class="element__title-text">Домбай</h2>
-            <button class="element__title-like" type="button"></button>
-          </div>
-        </article>
-
-        <article class="element">
-          <button class="element__bin" type="button"></button>
-          <img class="element__pic" src="./images/element-pic-karachaev-cherkesk.png" alt="Карачаевск">
-          <div class="element__title">
-            <h2 class="element__title-text">Карачаевск</h2>
-            <button class="element__title-like" type="button"></button>
-          </div>
-        </article>
--->
-      </section>
+      <section class="elements"></section>
 
     </main>
 
@@ -95,7 +39,7 @@
       <p class="footer__copy">&copy; 2022. Руслан Газиев</p>
     </footer>
 
-    <div class="popup">
+    <div class="popup popup_type_profile-edit">
       <div class="popup__container">
         <button class="popup__close" type="button"></button>
         <form class="popup__form" name="prof" action="#" method="get">
@@ -107,7 +51,7 @@
       </div>
     </div>
 
-    <div class="popup place">
+    <div class="popup popup_type_new-card">
       <div class="popup__container">
         <button class="popup__close" type="button"></button>
         <form class="popup__form-place" name="place" action="#" method="get">
@@ -119,9 +63,9 @@
       </div>
     </div>
 
-    <div class="image-popup">
+    <div class="popup popup_type_view-image">
       <figure class="image-popup__container">
-        <button class="image-popup__close" type="button"></button>
+        <button class="popup__close" type="button"></button>
         <img class="image-popup__img" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg" alt="#">
         <figcaption class="image-popup__title">#</figcaption>
       </figure>
@@ -132,7 +76,7 @@
   <template id="element-template">
     <article class="element">
       <button class="element__bin" type="button"></button>
-      <img class="element__pic" src="" alt="">
+      <img class="element__pic" src="#" alt="#">
       <div class="element__title">
         <h2 class="element__title-text"></h2>
         <button class="element__title-like" type="button"></button>

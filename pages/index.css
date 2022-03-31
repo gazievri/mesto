@@ -38,12 +38,11 @@
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__input/_field/popup__input_field_name.css);
 @import url(../blocks/popup/__input/_field/popup__input_field_occupation.css);
+@import url(../blocks/popup/_type/popup_type_view-image.css);
 
-@import url(..//blocks/image-popup/image-popup.css);
+
 @import url(..//blocks/image-popup/__title/image-popup__title.css);
-@import url(..//blocks/image-popup/__close/image-popup__close.css);
 @import url(..//blocks/image-popup/__container/image-popup__container.css);
-@import url(..//blocks/image-popup/_opened/image-popup_opened.css);
 @import url(..//blocks/image-popup/__image/image-popup__img.css);
 
 
@@ -51,12 +50,4 @@
 
 @import url(../blocks/body/body.css);
 
-
-
-
-/**
-* {
-  border: 1px solid red;
-};
-**/
 
