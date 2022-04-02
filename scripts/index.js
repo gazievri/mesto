@@ -132,9 +132,10 @@ function renderInitialCards() {
 //Добавление новой карточки
 function addNewCard (evt) {
   evt.preventDefault();
-  cardsContainer.prepend(renderCard( {name: placeInput.value, link: linkInput.value }));
+  renderCard({ name: placeInput.value, link: linkInput.value });
   closePopup(popupAddNewCard);
 }
+
 
 //Функция поставить или убрать лайк
 function getLike(event) {
