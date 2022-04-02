@@ -1,12 +1,12 @@
 .elements {
-  display: flex;
-  flex-wrap: wrap;
-
+  display: grid;
+  grid: none;
+  grid-template-columns: repeat(auto-fit, 282px);
+  justify-content: center;
+  align-items: center;
+  grid-auto-flow: row;
   row-gap: 20px;
   column-gap: 17px;
-  margin: 0 auto 0;
-  max-width: 880px;
-  justify-content: center;
 }
 
 @media (max-width: 320px) {

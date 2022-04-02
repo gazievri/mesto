@@ -4,6 +4,9 @@
   padding-bottom: 60px;
   padding-left: 19px;
   padding-right: 19px;
+  margin: 0 auto 0;
+  max-width: 882px;
+
 }
 
 @media (max-width: 320px) {

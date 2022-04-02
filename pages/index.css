@@ -4,13 +4,14 @@
 @import url(../blocks/root/root.css);
 
 @import url(../blocks/header/header.css);
+
 @import url(../blocks/logo/logo.css);
 
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__title/profile__title.css);
 @import url(../blocks/profile/__subtitle/profile__subtitle.css);
-@import url(..//blocks/profile/__button/profile__button.css);
+@import url(../blocks/profile/__add-button/profile__add-button.css);
 @import url(..//blocks/profile/__profile-info/profile__profile-info.css);
 @import url(..//blocks/profile/__edit-button/profile__edit-button.css);
 @import url(..//blocks/profile/__title-and-button/profile__title-and-button.css);
@@ -25,16 +26,15 @@
 @import url(..//blocks/element/__bin/element__bin.css);
 @import url(..//blocks/element/__title-like/_active/element__title-like_active.css);
 
-
 @import url(..//blocks/footer/footer.css);
 @import url(..//blocks/footer/__copy/footer__copy.css);
 
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__container/popup__container.css);
-@import url(../blocks/popup/__button/popup__button.css);
+@import url(../blocks/popup/__save-button/popup__save-button.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
-@import url(../blocks/popup/__close/popup__close.css);
+@import url(../blocks/popup/__close-button/popup__close-button.css);
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__input/_field/popup__input_field_name.css);
 @import url(../blocks/popup/__input/_field/popup__input_field_occupation.css);
@@ -43,14 +43,6 @@
 @import url(../blocks/popup/__img-title/popup__img-title.css);
 @import url(../blocks/popup/__container/_type/popup__container_type_all.css);
 @import url(../blocks/popup/__container/_type/popup__container_type_img.css);
-
-
-
-@import url(..//blocks/image-popup/__container/image-popup__container.css);
-
-
-
-
 
 @import url(../blocks/body/body.css);
 

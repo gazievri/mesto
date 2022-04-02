@@ -1,8 +1,9 @@
 .profile__title-and-button {
   display: flex;
-  flex-wrap: nowrap;
+  flex-direction: column;
   column-gap: 18px;
   align-items: baseline;
+  
 }
 
 @media (max-width: 522px) {

@@ -18,20 +18,21 @@
 
     <main>
       <section class="profile">
-
         <img class="profile__avatar" src="./images/avatar.jpg" alt="Жак Ив Кусто">
         <div class="profile__profile-info">
           <div class="profile__title-and-button">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button" type="button" aria-label="Редактировать профиль"></button>
+            <p class="profile__subtitle">Исследователь океана</p>
           </div>
-          <p class="profile__subtitle">Исследователь океана</p>
+          <button class="profile__edit-button" type="button" aria-label="Редактировать профиль"></button>
         </div>
-        <button class="profile__button" type="button"></button>
+        <button class="profile__add-button" type="button"></button>
 
       </section>
 
-      <section class="elements"></section>
+      <section class="elements">
+      
+      </section>
 
     </main>
 
@@ -41,31 +42,31 @@
 
     <div class="popup popup_type_profile-edit">
       <div class="popup__container popup__container_type_all">
-        <button class="popup__close" type="button"></button>
+        <button class="popup__close-button" type="button"></button>
         <form class="popup__form" name="prof" action="#" method="get">
           <h2 class="popup__title">Редактировать профиль</h2>
           <input class="popup__input popup__input_field_name" placeholder="Ваши имя и фамилия" type="text" name="name" id="name" required>
           <input class="popup__input popup__input_field_occupation" placeholder="Ваша работа" type="text" name="occupation" id="occupation" required>
-          <button class="popup__button" type="submit">Сохранить</button>
+          <button class="popup__save-button" type="submit">Сохранить</button>
         </form>
       </div>
     </div>
 
     <div class="popup popup_type_new-card">
       <div class="popup__container popup__container_type_all">
-        <button class="popup__close" type="button"></button>
+        <button class="popup__close-button" type="button"></button>
         <form class="popup__form-place" name="place" action="#" method="get">
           <h2 class="popup__title">Новое место</h2>
           <input class="popup__input popup__input_field_place" placeholder="Название" type="text" name="place" id="place" required>
           <input class="popup__input popup__input_field_link" placeholder="Ссылка на картинку" type="text" name="link" id="link" required>
-          <button class="popup__button" type="submit">Сохранить</button>
+          <button class="popup__save-button" type="submit">Сохранить</button>
         </form>
       </div>
     </div>
 
     <div class="popup popup_type_view-image">
       <figure class="popup__container popup__container_type_img">
-        <button class="popup__close" type="button"></button>
+        <button class="popup__close-button" type="button"></button>
         <img class="popup__img" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg" alt="#">
         <figcaption class="popup__img-title">#</figcaption>
       </figure>
