@@ -136,7 +136,6 @@ function addNewCard (evt) {
   closePopup(popupAddNewCard);
 }
 
-
 //Функция поставить или убрать лайк
 function getLike(event) {
   const like = event.currentTarget.closest('.element__title-like');

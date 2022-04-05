@@ -44,6 +44,11 @@
 @import url(../blocks/popup/__container/_type/popup__container_type_all.css);
 @import url(../blocks/popup/__container/_type/popup__container_type_img.css);
 
+@import url(../blocks/popup/__form/_type/popup__form_type_error.css);
+@import url(../blocks/popup/__error-text/popup__error-text.css);
+@import url(../blocks/popup/__error-text/_status/popup__error-text_status_active.css);
+
+
 @import url(../blocks/body/body.css);
 
 

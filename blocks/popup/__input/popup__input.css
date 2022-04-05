@@ -4,6 +4,8 @@
   border: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding-bottom: 13px;
+  padding-left: 0;
+  padding-right: 0;
   font-family: Inter, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -13,9 +15,10 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  margin: 0;
+  margin-top: 13px;
   margin-left: 36px;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 1);
 }
 
 @media (max-width: 570px) {
