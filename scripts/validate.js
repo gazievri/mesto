@@ -1,7 +1,3 @@
-//const popupForm = document.querySelector('.popup__form');
-//const formInput = popupForm.querySelector('.popup__input');
-//const formError = popupForm.querySelector(`.${formInput.id}-error`);
-
 //Функция, которая добавляет класс с ошибкой
 const showInputError = (popupForm, formInput, errorMessage, settings) => {
   const formError = popupForm.querySelector(`.${formInput.id}-error`);
@@ -31,11 +27,7 @@ const isValid = (popupForm, formInput, settings) => {
   };
 };
 
-
-
-
 // Функция добавляет слушателя обработчик события для каждого поля ввода
-
 const setEventListeners = (popupForm, settings) => {
   // Находим все поля внутри формы,
   // сделаем из них массив методом Array.from
@@ -80,7 +72,6 @@ const enableValidation = (settings) => {
   });
 };
 
-
 // Делаем кнопку Сохранить не активной
 
 // Функция принимает массив полей и проверяет валидность каждого поля
@@ -109,10 +100,7 @@ const toggleButtonState = (inputList, buttonElement, settings) => {
   }
 };
 
-// Вызовем функцию
-//enableValidation();
-
-
+// Вызовем функцию валидации с передачей всех параметров (по услвоиям задания)
 enableValidation({
   formSelector: '.popup__form',
   inputSelector: '.popup__input',

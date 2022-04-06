@@ -168,7 +168,6 @@ function openImagePopup(cardPic) {
 
 renderInitialCards();
 
-
 //Слушатели
 
 //Слушатель на кнопку "Открыть профайл"
@@ -176,15 +175,18 @@ profileOpenBtn.addEventListener('click', openPopupProfile);
 cardAddBtn.addEventListener('click', openPopupAddNewCard);
 formElement.addEventListener('submit', saveProfile);
 
-//Функция прикрепляет слушателя с функцией "закрыть" на кнопку закрыть для всех попапов
+//Функция прикрепляет слушателя с функцией "закрыть" на кнопку закрыть для всех попапов,
+//а также закрытие по оверлею
 popups.forEach(function (item, id) {
   popupCloseBtns[id].addEventListener('click', function () {
     closePopup(item);
+  });
+  item.addEventListener('mousedown', function(evt) {
+    if (evt.currentTarget === evt.target) {// Функция закрытия по оверлею
+      closePopup(item);
+    }
   });
 });
 
 //Слушатель на кнопку сохранить формы добавления новой карточки
 formNewPlace.addEventListener('submit', addNewCard);
-
-
-
