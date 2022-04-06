@@ -56,14 +56,24 @@ const linkInput = document.querySelector('.popup__input_field_link');
 
 //Функции
 
+//Функция закрытия попапа при нажатии Esc
+function closePressEsc (evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
+  };
+};
+
 //Открытие попапа (универсальная функция)
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePressEsc);
 }
 
 //Закрытие попапа (унивесальная функция)
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePressEsc);
 }
 
 //Открытие попапа "Профайл (имя и работа)"
@@ -175,3 +185,6 @@ popups.forEach(function (item, id) {
 
 //Слушатель на кнопку сохранить формы добавления новой карточки
 formNewPlace.addEventListener('submit', addNewCard);
+
+
+
