@@ -1,33 +1,6 @@
 //Переменные
 
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
-const popup = document.querySelector('.popup');
+//const popup = document.querySelector('.popup');
 const popups = document.querySelectorAll('.popup');
 const profilePopup = document.querySelector('.popup_type_profile-edit');
 const formElement = document.querySelector('.popup__form');
@@ -41,11 +14,13 @@ const popupImage = document.querySelector('.popup_type_view-image');
 const popupImagePic = document.querySelector('.popup__img');
 const popupImageTitle = document.querySelector('.popup__img-title');
 
+
 // Кнопки
 const profileOpenBtn = document.querySelector('.profile__edit-button');
 const cardAddBtn = document.querySelector('.profile__add-button');
 const popupCloseBtns = document.querySelectorAll('.popup__close-button');
-const popupCloseBtn = document.querySelector('.popup__close-button');
+const saveCardBtn = document.querySelector('.popup_type_new-card .popup__save-button');
+//const popupCloseBtn = document.querySelector('.popup__close-button');
 
 // Поля ввода в форме
 const nameInput = document.querySelector('.popup__input_field_name');
@@ -67,6 +42,8 @@ function closePressEsc (evt) {
 //Открытие попапа (универсальная функция)
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  saveCardBtn.disabled = true;
+  saveCardBtn.classList.add('popup__save-button_inactive');
   document.addEventListener('keydown', closePressEsc);
 }
 
@@ -177,8 +154,8 @@ formElement.addEventListener('submit', saveProfile);
 
 //Функция прикрепляет слушателя с функцией "закрыть" на кнопку закрыть для всех попапов,
 //а также закрытие по оверлею
-popups.forEach(function (item, id) {
-  popupCloseBtns[id].addEventListener('click', function () {
+popups.forEach(function (item) {
+  item.querySelector('.popup__close-button').addEventListener('click', function () {
     closePopup(item);
   });
   item.addEventListener('mousedown', function(evt) {

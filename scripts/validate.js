@@ -109,3 +109,19 @@ enableValidation({
   inputErrorClass: 'poup__form_type_error',
   errorClass: 'popup__error-text_status_active'
 });
+
+function setStartState () {
+  
+  toggleButtonState(inputList, buttonElement, settings);
+}
+
+
+
+// const setInitialState = (formElement) => {
+//   const inputList = Array.from(formElement.querySelectorAll(validationList.inputSelector));
+//   const buttonElement = formElement.querySelector(validationList.submitButtonSelector);
+//     inputList.forEach((inputElement) => {
+//     hideInputError(formElement, inputElement);
+//     toggleButtonState(inputList, buttonElement);
+//     });
+//   };
