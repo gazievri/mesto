@@ -93,7 +93,7 @@ const toggleButtonState = (inputList, buttonElement, settings) => {
     // сделай кнопку неактивной
     //buttonElement.classList.add(settings.inactiveButtonClass);
     //buttonElement.disabled = true; // Отключает кнопку
-    disableButton (buttonElement);
+    disableButton (buttonElement, settings);
   } else {
     // иначе сделай кнопку активной
     buttonElement.classList.remove(settings.inactiveButtonClass);
@@ -101,7 +101,7 @@ const toggleButtonState = (inputList, buttonElement, settings) => {
   }
 };
 
-//****
+//Функция делает кнопку Сохранить неактивной (отключает кнопку)
 const disableButton = (buttonElement, settings) => {
   buttonElement.classList.add(settings.inactiveButtonClass);// Добавляет неактивный класс
   buttonElement.disabled = true; // Отключает кнопку

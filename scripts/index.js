@@ -1,6 +1,5 @@
 //Переменные
 
-//const popup = document.querySelector('.popup');
 const popups = document.querySelectorAll('.popup');
 const profilePopup = document.querySelector('.popup_type_profile-edit');
 const formElement = document.querySelector('.popup__form');
@@ -13,14 +12,20 @@ const cardTemplate = document.querySelector('#element-template');
 const popupImage = document.querySelector('.popup_type_view-image');
 const popupImagePic = document.querySelector('.popup__img');
 const popupImageTitle = document.querySelector('.popup__img-title');
-
+const settings = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__save-button',
+  inactiveButtonClass: 'popup__save-button_inactive',
+  inputErrorClass: 'poup__form_type_error',
+  errorClass: 'popup__error-text_status_active'
+};
 
 // Кнопки
 const profileOpenBtn = document.querySelector('.profile__edit-button');
 const cardAddBtn = document.querySelector('.profile__add-button');
 const popupCloseBtns = document.querySelectorAll('.popup__close-button');
 const saveCardBtn = document.querySelector('.popup_type_new-card .popup__save-button');
-//const popupCloseBtn = document.querySelector('.popup__close-button');
 
 // Поля ввода в форме
 const nameInput = document.querySelector('.popup__input_field_name');
@@ -42,8 +47,6 @@ function closePressEsc (evt) {
 //Открытие попапа (универсальная функция)
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-  //saveCardBtn.disabled = true;
-  //saveCardBtn.classList.add('popup__save-button_inactive');
   document.addEventListener('keydown', closePressEsc);
 }
 
@@ -74,7 +77,6 @@ function openPopupAddNewCard() {
   openPopup(popupAddNewCard);
   placeInput.value = null;
   linkInput.value = null;
-  disableButton(buttonElement);
 }
 
 //Добавляем начальные карточки
@@ -123,6 +125,7 @@ function addNewCard (evt) {
   evt.preventDefault();
   renderCard({ name: placeInput.value, link: linkInput.value });
   closePopup(popupAddNewCard);
+  disableButton(saveCardBtn, settings);
 }
 
 //Функция поставить или убрать лайк
