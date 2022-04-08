@@ -42,8 +42,8 @@ function closePressEsc (evt) {
 //Открытие попапа (универсальная функция)
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-  saveCardBtn.disabled = true;
-  saveCardBtn.classList.add('popup__save-button_inactive');
+  //saveCardBtn.disabled = true;
+  //saveCardBtn.classList.add('popup__save-button_inactive');
   document.addEventListener('keydown', closePressEsc);
 }
 
@@ -66,6 +66,7 @@ function saveProfile (evt) {
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
   closePopup(profilePopup);
+
 }
 
 //Открытие попапа "Добавление новой карточки"
@@ -73,6 +74,7 @@ function openPopupAddNewCard() {
   openPopup(popupAddNewCard);
   placeInput.value = null;
   linkInput.value = null;
+  disableButton(buttonElement);
 }
 
 //Добавляем начальные карточки

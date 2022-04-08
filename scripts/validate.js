@@ -91,8 +91,9 @@ const toggleButtonState = (inputList, buttonElement, settings) => {
   // Если есть хотя бы один невалидный инпут
   if (hasInvalidInput(inputList)) {
     // сделай кнопку неактивной
-    buttonElement.classList.add(settings.inactiveButtonClass);
-    buttonElement.disabled = true; // Отключает кнопку
+    //buttonElement.classList.add(settings.inactiveButtonClass);
+    //buttonElement.disabled = true; // Отключает кнопку
+    disableButton (buttonElement);
   } else {
     // иначе сделай кнопку активной
     buttonElement.classList.remove(settings.inactiveButtonClass);
@@ -100,7 +101,13 @@ const toggleButtonState = (inputList, buttonElement, settings) => {
   }
 };
 
-// Вызовем функцию валидации с передачей всех параметров (по услвоиям задания)
+//****
+const disableButton = (buttonElement, settings) => {
+  buttonElement.classList.add(settings.inactiveButtonClass);// Добавляет неактивный класс
+  buttonElement.disabled = true; // Отключает кнопку
+}
+
+// Вызовем функцию валидации с передачей всех параметров (по условиям задания)
 enableValidation({
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
@@ -110,18 +117,3 @@ enableValidation({
   errorClass: 'popup__error-text_status_active'
 });
 
-function setStartState () {
-  
-  toggleButtonState(inputList, buttonElement, settings);
-}
-
-
-
-// const setInitialState = (formElement) => {
-//   const inputList = Array.from(formElement.querySelectorAll(validationList.inputSelector));
-//   const buttonElement = formElement.querySelector(validationList.submitButtonSelector);
-//     inputList.forEach((inputElement) => {
-//     hideInputError(formElement, inputElement);
-//     toggleButtonState(inputList, buttonElement);
-//     });
-//   };
