@@ -1,5 +1,8 @@
+//Импорт переменных
+import { Card } from './Card.js';
+import { FormValidator } from './FormValidator.js';
+import { initialCards } from './initialCards.js';
 //Переменные
-
 const popups = document.querySelectorAll('.popup');
 const profilePopup = document.querySelector('.popup_type_profile-edit');
 const formElement = document.querySelector('.popup__form');
@@ -17,25 +20,22 @@ const settings = {
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__save-button',
   inactiveButtonClass: 'popup__save-button_inactive',
-  inputErrorClass: 'poup__form_type_error',
+  inputErrorClass: 'popup__form_type_error',
   errorClass: 'popup__error-text_status_active'
 };
-
 // Кнопки
 const profileOpenBtn = document.querySelector('.profile__edit-button');
 const cardAddBtn = document.querySelector('.profile__add-button');
-const popupCloseBtns = document.querySelectorAll('.popup__close-button');
-const saveCardBtn = document.querySelector('.popup_type_new-card .popup__save-button');
-
 // Поля ввода в форме
 const nameInput = document.querySelector('.popup__input_field_name');
 const jobInput = document.querySelector('.popup__input_field_occupation');
 const placeInput = document.querySelector('.popup__input_field_place');
 const linkInput = document.querySelector('.popup__input_field_link');
-
+//Формы из класса FormValidator
+const addFromValidationProfile = new FormValidator(settings, formElement);
+const addFromValidationNewCard = new FormValidator(settings, formNewPlace);
 
 //Функции
-
 //Функция закрытия попапа при нажатии Esc
 function closePressEsc (evt) {
   if (evt.key === 'Escape') {
@@ -44,13 +44,13 @@ function closePressEsc (evt) {
   };
 };
 
-//Открытие попапа (универсальная функция)
-function openPopup(popup) {
+//Открытие попапа (универсальная функция) в модуль
+function openPopup(popup) { //Эксопртировать функцию в класс кард
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePressEsc);
 }
 
-//Закрытие попапа (унивесальная функция)
+//Закрытие попапа (универсальная функция) в модуль
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closePressEsc);
@@ -69,7 +69,6 @@ function saveProfile (evt) {
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
   closePopup(profilePopup);
-
 }
 
 //Открытие попапа "Добавление новой карточки"
@@ -81,33 +80,13 @@ function openPopupAddNewCard() {
 
 //Добавляем начальные карточки
 
-//Создание единичной карточки из шаблона и наполнение данными
+//Создание единичной карточки из класса Card
 function createCard(item) {
-  // Клонируем шаблон, наполняем его информацией из объекта data
-  const card = cardTemplate.content.firstElementChild.cloneNode(true);
-  const cardPic = card.querySelector('.element__pic');
-  const cardName = card.querySelector('.element__title-text');
-  const cardLikeBtn = card.querySelector('.element__title-like');
-  const cardBinBtn = card.querySelector('.element__bin');
+  const card = new Card(item, cardTemplate);
+  return card.createCard();
+}
 
-  cardName.textContent = item.name;
-  cardPic.src = item.link;
-  cardPic.alt = item.name;
-
-  //Добавляем обработчик нажатия на кнопку лайк
-  cardLikeBtn.addEventListener('click', getLike);
-
-  //Добавляем обаботчик нажатия на кнопку "корзина"
-  cardBinBtn.addEventListener('click', removeCard);
-
-  //Добавляем обаботчик нажатия на картинку в карточке
-  cardPic.addEventListener('click', () => openImagePopup(cardPic));
-
-  // Возвращаем получившуюся карточку
-  return card;
-};
-
-// Создание и помещение созданной карточки на страницу
+//Создание и помещение созданной карточки на страницу
 function renderCard(item) {
   // Создаем карточку на основе данных
   const card = createCard(item);
@@ -125,28 +104,18 @@ function addNewCard (evt) {
   evt.preventDefault();
   renderCard({ name: placeInput.value, link: linkInput.value });
   closePopup(popupAddNewCard);
-  disableButton(saveCardBtn, settings);
+  //disableButton(saveCardBtn, settings);
+  addFromValidationNewCard._disableButton();
 }
 
-//Функция поставить или убрать лайк
-function getLike(event) {
-  const like = event.currentTarget.closest('.element__title-like');
-  like.classList.toggle('element__title-like_active');
-};
+//Подстановка данных для Картинки побольше
+export function openImagePopup (cardPic) {
+  popupImagePic.src = cardPic.link;
+  popupImagePic.alt = cardPic.name;
+  popupImageTitle.textContent = cardPic.name;
 
-//Функция удаления карточки
-function removeCard(event) {
-  const card = event.currentTarget.closest('.element'); //Ищем карточку ближайщую к событию (нажатие на кнопку)
-  card.remove(); //Удаление карточки
-};
-
-//Функция просмотра картинки в карточке
-function openImagePopup(cardPic) {
-  popupImagePic.src = cardPic.src;
-  popupImagePic.alt = cardPic.alt;
-  popupImageTitle.textContent = cardPic.alt;
   openPopup(popupImage);
-};
+}
 
 renderInitialCards();
 
@@ -172,3 +141,9 @@ popups.forEach(function (item) {
 
 //Слушатель на кнопку сохранить формы добавления новой карточки
 formNewPlace.addEventListener('submit', addNewCard);
+
+addFromValidationProfile.enableValidation();
+addFromValidationNewCard.enableValidation();
+
+
+
