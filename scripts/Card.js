@@ -20,7 +20,7 @@ class Card {
   //Добавление слушателей к карточке
   _addListeners() {
     this._card.querySelector('.element__title-like').addEventListener('click', this.handlerLike);
-    this._card.querySelector('.element__bin').addEventListener('click', this.handlerCardRemove);
+    this._card.querySelector('.element__bin').addEventListener('click', () => this.handlerCardRemove());
     this._card.querySelector('.element__pic').addEventListener('click', () => {
       this._openImagePopup(this._pic) //Слушатель события Открыть картинку побольше
     })
@@ -31,7 +31,7 @@ class Card {
   }
 
   handlerCardRemove(event) {
-    event.target.closest('.element').remove();
+    this._card.remove();
     this._card = null;
   }
 

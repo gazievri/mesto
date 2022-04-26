@@ -75,9 +75,10 @@ function saveProfile (evt) {
 //Открытие попапа "Добавление новой карточки"
 function openPopupAddNewCard() {
   openPopup(popupAddNewCard);
-  placeInput.value = '';  // !!!Для ревьюера: Использую логику, что если карточку начали заполнять, но потом передумали, при очередном добавление карточки поля должны быть пыстыми, так скорее всего пользователь будет добавлять другие параметры
+  placeInput.value = '';  // !!!Для ревьюера: Использую логику, что если карточку начали заполнять, но потом передумали, при очередном добавление карточки поля должны быть пустыми, так как скорее всего пользователь будет добавлять другие параметры
   linkInput.value = '';
   addFromValidationNewCard.resetTextError();
+  addFromValidationNewCard.disableButton();
 }
 
 //Добавляем начальные карточки
@@ -106,9 +107,6 @@ function addNewCard (evt) {
   evt.preventDefault();
   renderCard({ name: placeInput.value, link: linkInput.value });
   closePopup(popupAddNewCard);
-  addFromValidationNewCard.disableButton();
-  placeInput.value = '';
-  linkInput.value = '';
 }
 
 //Подстановка данных для Картинки побольше
