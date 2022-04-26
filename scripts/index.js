@@ -61,7 +61,7 @@ function openPopupProfile() {
   openPopup(profilePopup);
   nameInput.value = profileTitle.textContent;  //подставляем данные из профиля имя в форму
   jobInput.value = profileSubtitle.textContent;  //подставляем данные из профиля работа в форму
-
+  addFromValidationProfile.resetTextError();
 }
 
 //Закрытие попапа "Профайл" с отправкой данных из формы
@@ -75,6 +75,9 @@ function saveProfile (evt) {
 //Открытие попапа "Добавление новой карточки"
 function openPopupAddNewCard() {
   openPopup(popupAddNewCard);
+  placeInput.value = '';  // !!!Для ревьюера: Использую логику, что если карточку начали заполнять, но потом передумали, при очередном добавление карточки поля должны быть пыстыми, так скорее всего пользователь будет добавлять другие параметры
+  linkInput.value = '';
+  addFromValidationNewCard.resetTextError();
 }
 
 //Добавляем начальные карточки
@@ -104,8 +107,8 @@ function addNewCard (evt) {
   renderCard({ name: placeInput.value, link: linkInput.value });
   closePopup(popupAddNewCard);
   addFromValidationNewCard.disableButton();
-  placeInput.value = null;
-  linkInput.value = null;
+  placeInput.value = '';
+  linkInput.value = '';
 }
 
 //Подстановка данных для Картинки побольше

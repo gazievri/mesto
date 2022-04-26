@@ -9,7 +9,6 @@ export class FormValidator{
     this._popupForm = form; //Форма, откуда я могу взять все элементы формы
     this._inputList = Array.from(this._popupForm.querySelectorAll(this._inputSelector)); // Список всех полей ввода данных
     this._saveBtn = this._popupForm.querySelector(this._submitButtonSelector); //Кнопка сохранить
-    this._spansError = Array.from(this._popupForm.querySelector('.popup__error-text'));
   }
   //Проверка валидности инпута
   _isValid(input) {
@@ -86,6 +85,12 @@ export class FormValidator{
     return this._inputList.some((input) => {
       return !input.validity.valid;
     })
+  }
+
+  resetTextError() {
+    this._inputList.forEach(item => {
+      this._hideInputError(item);
+    });
   }
 
 }
