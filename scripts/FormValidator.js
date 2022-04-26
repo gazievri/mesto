@@ -9,6 +9,7 @@ export class FormValidator{
     this._popupForm = form; //Форма, откуда я могу взять все элементы формы
     this._inputList = Array.from(this._popupForm.querySelectorAll(this._inputSelector)); // Список всех полей ввода данных
     this._saveBtn = this._popupForm.querySelector(this._submitButtonSelector); //Кнопка сохранить
+    this._spansError = Array.from(this._popupForm.querySelector('.popup__error-text'));
   }
   //Проверка валидности инпута
   _isValid(input) {
@@ -45,6 +46,7 @@ export class FormValidator{
       });
     });
   };
+
   enableValidation() {
     // Найдём все формы с указанным классом в DOM, сделаем из них массив методом Array.from
     const formList = Array.from(document.querySelectorAll(this._formSelector));
@@ -56,11 +58,12 @@ export class FormValidator{
       });
       // Для каждой формы вызовем функцию setEventListeners, передав ей элемент формы
       this._setEventListeners(input);
+
     });
   }
   //Деактивация кнопки Сохранить
   //Сделать кнопку Сохранить неактивной
-  _disableButton() {
+  disableButton() {
     this._saveBtn.classList.add(this._inactiveButtonClass); // Добавляет неактивный класс
     this._saveBtn.disabled = true; //Отключает кнопку
   }
@@ -73,7 +76,7 @@ export class FormValidator{
   _toggleButtonState() {
     const formValid = this._hasInputsValid()
     if (formValid) {
-      this._disableButton();
+      this.disableButton();
     } else {
       this._enableButton();
     }
@@ -84,6 +87,7 @@ export class FormValidator{
       return !input.validity.valid;
     })
   }
+
 }
 
 

@@ -6,11 +6,13 @@
   flex-wrap: wrap;
   justify-content: center;
   column-gap: 30px;
+  flex-wrap: nowrap;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 920px) {
   .profile {
-    margin: 0 19px 36px;
     flex-direction: column;
+    margin: 0 19px 36px;
   }
 }
+

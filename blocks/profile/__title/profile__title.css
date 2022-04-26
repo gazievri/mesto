@@ -7,22 +7,28 @@
   line-height: 114%;
   margin: 0;
   text-overflow: ellipsis;
-  max-width: 45vw;
+  max-width: 500px;
   overflow: hidden;
   white-space: nowrap;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 920px) {
   .profile__title {
-    font-size: 8.3vw;
-    line-height: 33px;
-    max-width: 250px;
+    font-size: 5vw;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 620px) {
+  .profile__title {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 450px) {
   .profile__title {
     font-size: 27px;
-    max-width: 190px;
+    line-height: 33px;
+    max-width: 189px;
+    text-align: center;
   }
 }

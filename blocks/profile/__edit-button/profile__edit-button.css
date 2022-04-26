@@ -16,9 +16,22 @@
   cursor: pointer;
 }
 
+@media (max-width: 750px) {
+  .profile__edit-button{
+    width: 18px;
+    height: 18px;
+    margin-top: 13px;
+    margin-left: 13px;
+
+  }
+}
+
 @media (max-width: 320px) {
   .profile__edit-button{
     width: 18px;
     height: 18px;
+    align-self:baseline;
+    margin-top: 10px;
+    margin-left: 10px;
   }
 }

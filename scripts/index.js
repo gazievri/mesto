@@ -5,7 +5,7 @@ import { initialCards } from './initialCards.js';
 //Переменные
 const popups = document.querySelectorAll('.popup');
 const profilePopup = document.querySelector('.popup_type_profile-edit');
-const formElement = document.querySelector('.popup__form');
+const formElementProfile = document.querySelector('.popup__form-profile');
 const formNewPlace = document.querySelector('.popup__form-place');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
@@ -32,7 +32,7 @@ const jobInput = document.querySelector('.popup__input_field_occupation');
 const placeInput = document.querySelector('.popup__input_field_place');
 const linkInput = document.querySelector('.popup__input_field_link');
 //Формы из класса FormValidator
-const addFromValidationProfile = new FormValidator(settings, formElement);
+const addFromValidationProfile = new FormValidator(settings, formElementProfile);
 const addFromValidationNewCard = new FormValidator(settings, formNewPlace);
 
 //Функции
@@ -44,13 +44,13 @@ function closePressEsc (evt) {
   };
 };
 
-//Открытие попапа (универсальная функция) в модуль
-function openPopup(popup) { //Эксопртировать функцию в класс кард
+//Открытие попапа (универсальная функция)
+function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePressEsc);
 }
 
-//Закрытие попапа (универсальная функция) в модуль
+//Закрытие попапа (универсальная функция)
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closePressEsc);
@@ -61,6 +61,7 @@ function openPopupProfile() {
   openPopup(profilePopup);
   nameInput.value = profileTitle.textContent;  //подставляем данные из профиля имя в форму
   jobInput.value = profileSubtitle.textContent;  //подставляем данные из профиля работа в форму
+
 }
 
 //Закрытие попапа "Профайл" с отправкой данных из формы
@@ -74,15 +75,13 @@ function saveProfile (evt) {
 //Открытие попапа "Добавление новой карточки"
 function openPopupAddNewCard() {
   openPopup(popupAddNewCard);
-  placeInput.value = null;
-  linkInput.value = null;
 }
 
 //Добавляем начальные карточки
 
 //Создание единичной карточки из класса Card
 function createCard(item) {
-  const card = new Card(item, cardTemplate);
+  const card = new Card(item, cardTemplate, openImagePopup);
   return card.createCard();
 }
 
@@ -104,8 +103,9 @@ function addNewCard (evt) {
   evt.preventDefault();
   renderCard({ name: placeInput.value, link: linkInput.value });
   closePopup(popupAddNewCard);
-  //disableButton(saveCardBtn, settings);
-  addFromValidationNewCard._disableButton();
+  addFromValidationNewCard.disableButton();
+  placeInput.value = null;
+  linkInput.value = null;
 }
 
 //Подстановка данных для Картинки побольше
@@ -124,7 +124,7 @@ renderInitialCards();
 //Слушатель на кнопку "Открыть профайл"
 profileOpenBtn.addEventListener('click', openPopupProfile);
 cardAddBtn.addEventListener('click', openPopupAddNewCard);
-formElement.addEventListener('submit', saveProfile);
+formElementProfile.addEventListener('submit', saveProfile);
 
 //Функция прикрепляет слушателя с функцией "закрыть" на кнопку закрыть для всех попапов,
 //а также закрытие по оверлею

@@ -1,4 +1,6 @@
 .popup__error-text {
+  display: inline-block;
+  width: 358px;
   visibility: hidden;
   font-family: 'Inter';
   font-style: normal;
@@ -7,4 +9,5 @@
   line-height: 15px;
   color: #FF0000;
   margin-left: 36px;
+  
 }

@@ -8,31 +8,36 @@
   margin: 0;
   margin-top: 16px;
   text-overflow: ellipsis;
-  max-width: 45vw;
+  max-width: 500px;
   overflow: hidden;
   white-space: nowrap;
 }
 
-@media (max-width: 522px) {
+@media (max-width: 920px) {
   .profile__subtitle {
-    text-align: center;
-    margin-top: 7px;
+    max-width: 500px;
+    align-self: center;
+  }
+}
+
+@media (max-width: 620px) {
+  .profile__subtitle {
+    font-size: 14px;
     max-width: 350px;
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 522px) {
   .profile__subtitle {
-    font-size: 3.5vw;
-    max-width: 300px;
+    margin-top: 7px;
+    max-width: 250px;
   }
 }
 
 @media (max-width: 320px) {
   .profile__subtitle {
     font-weight: 400;
-    font-size: 14px;
     line-height: 17px;
-    max-width: 282px;
+    max-width: 230px;
   }
 }
