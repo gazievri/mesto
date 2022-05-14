@@ -1,11 +1,11 @@
 class Card {
 
-  constructor(infoCard, templateCard, openImagePopup) {
+  constructor(infoCard, templateCard, handleCardClick) {
     this._name = infoCard.name;
     this._link = infoCard.link;
     this._templateCard = templateCard;
     this._pic = infoCard;
-    this._openImagePopup = openImagePopup
+    this._handleCardClick = handleCardClick
   }
 
   createCard() {
@@ -22,7 +22,7 @@ class Card {
     this._card.querySelector('.element__title-like').addEventListener('click', this.handlerLike);
     this._card.querySelector('.element__bin').addEventListener('click', () => this.handlerCardRemove());
     this._card.querySelector('.element__pic').addEventListener('click', () => {
-      this._openImagePopup(this._pic) //Слушатель события Открыть картинку побольше
+      this._handleCardClick(this._pic) //Слушатель события Открыть картинку побольше
     })
   }
 
