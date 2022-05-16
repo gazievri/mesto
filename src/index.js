@@ -9,6 +9,7 @@ import PopupWithImage from './components/PopupWithImage.js';
 import PopupWithForm from './components/PopupWithForm.js';
 import UserInfo from './components/UserInfo.js';
 
+
 //Переменные
 const formElementProfile = document.querySelector('.popup__form-profile');
 const formNewPlace = document.querySelector('.popup__form-place');
@@ -27,12 +28,12 @@ const cardAddBtn = document.querySelector('.profile__add-button');
 // Поля ввода в форме
 const nameInput = document.querySelector('.popup__input_field_name');
 const jobInput = document.querySelector('.popup__input_field_occupation');
-//const placeInput = document.querySelector('.popup__input_field_place');
-//const linkInput = document.querySelector('.popup__input_field_link');
+
+
 
 //Формы из класса FormValidator
-const addFromValidationProfile = new FormValidator(settings, formElementProfile);
-const addFromValidationNewCard = new FormValidator(settings, formNewPlace);
+const formValidationProfile = new FormValidator(settings, formElementProfile);
+const formValidationNewCard = new FormValidator(settings, formNewPlace);
 
 //*****Popup edit*****
 //Объявляю класс для информации о пользователе
@@ -92,5 +93,5 @@ profileOpenBtn.addEventListener('click', () => {
 });
 cardAddBtn.addEventListener('click', popupAddNewCard.open);
 
-addFromValidationProfile.enableValidation();
-addFromValidationNewCard.enableValidation();
+formValidationProfile.enableValidation();
+formValidationNewCard.enableValidation();

@@ -14,11 +14,14 @@ module.exports = {
   },
   mode: 'development',
   devServer: {
-    contentBase: path.resolve(__dirname, './dist'),
+    static: {
+      directory: path.resolve(__dirname, './dist'),
+    },
     open: true,
     compress: true,
     port: 8080
   },
+  devtool: 'inline-source-map',
   module: {
     rules: [{
         test: /\.js$/,
@@ -48,7 +51,6 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
-
   ]
 }
 

@@ -45,10 +45,11 @@ export class FormValidator{
       });
     });
   };
-
+  //debugger;
   enableValidation() {
-    // Найдём все формы с указанным классом в DOM, сделаем из них массив методом Array.from
-    const formList = Array.from(document.querySelectorAll(this._formSelector));
+    // Найдем конкретную форму, создадим массив со всеми инпутами из этой конкретной формы
+    const formList = Array.from(this._popupForm.querySelectorAll(this._inputSelector));
+
     // Переберём полученную коллекцию
     formList.forEach((input) => {
       input.addEventListener('submit', (evt) => {
