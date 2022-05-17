@@ -1,4 +1,4 @@
-export class FormValidator{
+export default class FormValidator{
   constructor(settings, form) {
     this._formSelector = settings.formSelector; //Сама форма
     this._inputSelector = settings.inputSelector; //Поле ввода данных
@@ -34,33 +34,29 @@ export class FormValidator{
   };
   // Функция добавляет слушателя обработчик события для каждого поля ввода
   _setEventListeners() {
-    // Делаем кнопку Сохранить неактивной при октрытии формы
+    // Делаем кнопку Сохранить неактивной при открытии формы
     this._toggleButtonState();
+
     // Обойдём все элементы полученной коллекции
     this._inputList.forEach((input) => {
       // каждому полю добавим обработчик события input
+      
       input.addEventListener('input', () => {
         this._isValid(input);
         this._toggleButtonState();
       });
     });
+
   };
-  //debugger;
+
   enableValidation() {
-    // Найдем конкретную форму, создадим массив со всеми инпутами из этой конкретной формы
-    const formList = Array.from(this._popupForm.querySelectorAll(this._inputSelector));
-
-    // Переберём полученную коллекцию
-    formList.forEach((input) => {
-      input.addEventListener('submit', (evt) => {
-        // У каждой формы отменим стандартное поведение
-        evt.preventDefault();
-      });
-      // Для каждой формы вызовем функцию setEventListeners, передав ей элемент формы
-      this._setEventListeners(input);
-
+    this._popupForm.addEventListener('submit', (evt) => {
+      evt.preventDefault();
     });
+
+    this._setEventListeners();
   }
+
   //Деактивация кнопки Сохранить
   //Сделать кнопку Сохранить неактивной
   disableButton() {

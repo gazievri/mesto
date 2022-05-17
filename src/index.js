@@ -2,7 +2,7 @@ import './pages/index.css';
 
 //Импорт переменных
 import { Card } from './components/Card.js';
-import { FormValidator } from './components/FormValidator.js';
+import FormValidator from './components/FormValidator.js';
 import { initialCards } from './components/initialCards.js';
 import Section from './components/Section.js';
 import PopupWithImage from './components/PopupWithImage.js';
@@ -90,8 +90,12 @@ profileOpenBtn.addEventListener('click', () => {
   nameInput.value = userInfo.name;
   jobInput.value = userInfo.occupation;
   popupProfileEdit.open();
+  formValidationProfile.resetTextError();
 });
-cardAddBtn.addEventListener('click', popupAddNewCard.open);
+cardAddBtn.addEventListener('click', () => {
+  popupAddNewCard.open();
+  formValidationNewCard.resetTextError();
+});
 
 formValidationProfile.enableValidation();
 formValidationNewCard.enableValidation();
