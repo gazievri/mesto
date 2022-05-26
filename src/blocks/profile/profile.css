@@ -6,6 +6,7 @@
   justify-content: center;
   column-gap: 30px;
   flex-wrap: nowrap;
+  position: relative;
 }
 
 @media (max-width: 920px) {
