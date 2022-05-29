@@ -9,12 +9,7 @@ export default class Api {
       method: 'GET',
       headers: this._headers
     })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`)
-    });
+    .then(this._checkResponse);
   }
   //метод запрашивает данные с карточками с сервера
   getCards() {
@@ -22,12 +17,7 @@ export default class Api {
       method: 'GET',
       headers: this._headers
     })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`)
-    });
+    .then(this._checkResponse);
   }
   //Метод отправляет данные пользователя на сервер
   sendNewProfileData(data) {
@@ -36,12 +26,7 @@ export default class Api {
       headers: this._headers,
       body: JSON.stringify(data)
     })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`)
-    });
+    .then(this._checkResponse);
   }
 
   //Метод отправляет данные новой карточки на сервер
@@ -51,12 +36,7 @@ export default class Api {
       headers: this._headers,
       body: JSON.stringify(data)
     })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`)
-    });
+    .then(this._checkResponse);
   }
 
   deleteCard(data) {
@@ -64,12 +44,7 @@ export default class Api {
       method: 'DELETE',
       headers: this._headers
     })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`)
-    });
+    .then(this._checkResponse);
   }
 
   changeAvatar(data) {
@@ -78,12 +53,7 @@ export default class Api {
       headers: this._headers,
       body: JSON.stringify(data)
     })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`)
-    });
+    .then(this._checkResponse);
   }
 
   sendLike(data) {
@@ -91,12 +61,7 @@ export default class Api {
       method: 'PUT',
       headers: this._headers,
     })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`)
-    });
+    .then(this._checkResponse);
   }
 
   deleteLike(data) {
@@ -104,13 +69,15 @@ export default class Api {
       method: 'DELETE',
       headers: this._headers,
     })
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`)
-    });
+    .then(this._checkResponse);
   }
+
+  _checkResponse(res) {
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(`Error: ${res.status}`)
+}
 
 }
 

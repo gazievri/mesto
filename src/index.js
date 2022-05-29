@@ -1,6 +1,4 @@
 import './pages/index.css';
-
-//Импорт переменных
 import Card from './components/Card.js';
 import FormValidator from './components/FormValidator.js';
 import Section from './components/Section.js';
@@ -9,29 +7,7 @@ import PopupWithForm from './components/PopupWithForm.js';
 import UserInfo from './components/UserInfo.js';
 import Api from './components/Api.js';
 import PopupWithSubmit from './components/PopupWithSubmit.js';
-
-//Переменные
-const formElementProfile = document.querySelector('.popup__form-profile');
-const formNewPlace = document.querySelector('.popup__form-place');
-const formAvatarEdit = document.querySelector('.popup__form-avatar');
-
-const cardTemplate = document.querySelector('#element-template');
-const settings = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__save-button',
-  inactiveButtonClass: 'popup__save-button_inactive',
-  inputErrorClass: 'popup__form_type_error',
-  errorClass: 'popup__error-text_status_active'
-};
-const myToken = '6f7d4ee2-1133-493f-8dc5-cde7a586dd12';
-// Кнопки
-const profileOpenBtn = document.querySelector('.profile__edit-button');
-const cardAddBtn = document.querySelector('.profile__add-button');
-const avatarEditBtn = document.querySelector('.profile__avatar-edit');
-// Поля ввода в форме
-const nameInput = document.querySelector('.popup__input_field_name');
-const jobInput = document.querySelector('.popup__input_field_occupation');
+import { formElementProfile, formNewPlace, formAvatarEdit, cardTemplate, settings, myToken, profileOpenBtn, cardAddBtn, avatarEditBtn, nameInput, jobInput} from './utils/constants.js';
 
 let ownerId;
 
@@ -67,7 +43,7 @@ Promise.all([
 })
 .catch(err => console.log(err))
 
-const card = (...arg) => new Card(...arg);
+const sendArgToClassCard = (...arg) => new Card(...arg);
 
 //Popup delete confirmation
 const submitPopup = new PopupWithSubmit('.popup_type_delete-confirm');
@@ -85,7 +61,8 @@ function sendNewAvatarApi(item) {
     popupAvatarEdit.close();
 
   })
-  .catch(err => console.log(err));
+  .catch(err => console.log(err))
+  .finally(() => popupAvatarEdit.loadingDone('Сохранить'))
 }
 
 //*****Popup edit*****
@@ -108,6 +85,7 @@ function newProfileDataApi(item) {
     popupProfileEdit.close();
   })
   .catch(err => console.log(err))
+  .finally(()=> popupProfileEdit.loadingDone('Сохранить'))
 }
 
 //Popup new card add
@@ -123,6 +101,7 @@ function addNewCardApi(item) {
     popupAddNewCard.close()
   })
   .catch(err => console.log(err))
+  .finally(()=> popupAddNewCard.loadingDone('Сохранить'))
 }
 
 function deleteCardApi(item, card) {
@@ -135,9 +114,9 @@ function deleteCardApi(item, card) {
       card = null;
       submitPopup.close();
     }).catch((err) => console.log(err))
+    .finally(()=> submitPopup.loadingDone('Да'))
   });
   submitPopup.enableSubmitBtn();
-  submitPopup.loadingDone('Да');
   submitPopup.open();
   submitPopup.submit();
 }
@@ -158,7 +137,7 @@ profileOpenBtn.addEventListener('click', () => {
   jobInput.value = userInfo.about;
   popupProfileEdit.open();
   formValidationProfile.resetTextError();
-  popupProfileEdit.loadingDone('Сохранить');
+  //popupProfileEdit.loadingDone('Сохранить');
 });
 
 avatarEditBtn.addEventListener('click', () => {
@@ -170,7 +149,7 @@ avatarEditBtn.addEventListener('click', () => {
 cardAddBtn.addEventListener('click', () => {
   popupAddNewCard.open();
   formValidationNewCard.resetTextError();
-  popupAddNewCard.loadingDone('Сохранить');
+  //popupAddNewCard.loadingDone('Сохранить');
 });
 
 formValidationProfile.enableValidation();
@@ -178,30 +157,29 @@ formValidationNewCard.enableValidation();
 formValidationAvatar.enableValidation();
 
 //функция создания новой карточки
-
 function createNewCardJust (item) {
-  const card2 = card(
+  const card = sendArgToClassCard(
     item,
     cardTemplate,
     handleCardClick,
     deleteCardApi)
 
-  card2.sendLikeApi(() => {
+  card.sendLikeApi(() => {
     api.sendLike(item)
     .then(res => {
-      card2.handlerLike(res);
+      card.handlerLike(res);
     })
     .catch(err => console.log(err))
   }),
-  card2.deleteLikeApi(() => {
+  card.deleteLikeApi(() => {
     api.deleteLike(item)
     .then(res => {
-      card2.handlerLike(res);
+      card.handlerLike(res);
     })
     .catch(err => console.log(err))
   });
 
-  return card2.createCard();
+  return card.createCard();
 }
 
 

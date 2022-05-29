@@ -8,7 +8,7 @@ export default class Section {
 
   //отвечает за отрисовку всех элементов.
   rendererCards(cards) {
-    cards.forEach(card => {
+    cards.reverse().forEach(card => {
       this.addItem(this._renderer(card));
       return card
     })
