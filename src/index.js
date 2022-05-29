@@ -10,7 +10,6 @@ import UserInfo from './components/UserInfo.js';
 import Api from './components/Api.js';
 import PopupWithSubmit from './components/PopupWithSubmit.js';
 
-
 //Переменные
 const formElementProfile = document.querySelector('.popup__form-profile');
 const formNewPlace = document.querySelector('.popup__form-place');
@@ -36,7 +35,6 @@ const jobInput = document.querySelector('.popup__input_field_occupation');
 
 let ownerId;
 
-
 //Формы из класса FormValidator
 const formValidationProfile = new FormValidator(settings, formElementProfile);
 const formValidationNewCard = new FormValidator(settings, formNewPlace);
@@ -50,7 +48,6 @@ const api = new Api ({
     'Content-Type': 'application/json'
   }
 });
-
 
 Promise.all([
   api.getInfo(),
@@ -70,10 +67,6 @@ Promise.all([
 })
 .catch(err => console.log(err))
 
-
-
-
-
 const card = (...arg) => new Card(...arg);
 
 //Popup delete confirmation
@@ -84,7 +77,6 @@ submitPopup.setEventListeners();
 const popupAvatarEdit = new PopupWithForm('.popup_type_avatar-edit', sendNewAvatarApi)
 popupAvatarEdit.setEventListeners()
 
-
 function sendNewAvatarApi(item) {
   popupAvatarEdit.loadingInProcess();
   api.changeAvatar(item)
@@ -94,7 +86,6 @@ function sendNewAvatarApi(item) {
 
   })
   .catch(err => console.log(err));
-
 }
 
 //*****Popup edit*****
