@@ -14,7 +14,12 @@ const presets = [
   }]
 ];
 
+const plugins = [
+  ['@babel/transform-runtime', {'regenerator':true}]
+];
+
 module.exports = { presets };
+module.exports = { plugins };
 
 
 

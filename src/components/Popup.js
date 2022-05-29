@@ -4,14 +4,15 @@ export default class Popup {
   constructor(popupSelector){
     this._popup = document.querySelector(popupSelector);
     this._closeBtn = this._popup.querySelector('.popup__close-button');
-    this.close = this.close.bind(this); // Павел, если не привязывать контекст, то функционал перестает работать
-    this.open = this.open.bind(this); // Павел, если не привязывать контекст, то функционал перестает работать
+    //this.close = this.close.bind(this);
+    //this.open = this.open.bind(this);
     this._handleEscClose = this._handleEscClose.bind(this);
   }
 
   open() {
     this._popup.classList.add('popup_opened');
     document.addEventListener('keydown', this._handleEscClose);
+    
   }
 
   close() {
@@ -32,8 +33,8 @@ export default class Popup {
   }
 
   setEventListeners() {
-    this._closeBtn.addEventListener('click', this.close);
-    this._popup.addEventListener('mousedown', (evt)=>{this._closePressOverlay(evt)});
+    this._closeBtn.addEventListener('click', () => this.close());
+    this._popup.addEventListener('mousedown', (evt)=> this._closePressOverlay(evt));
   }
 }
 

@@ -12,14 +12,29 @@ export default class PopupWithSubmit extends Popup {
 
   setEventListeners() {
     super.setEventListeners();
+    //this._submit.addEventListener('submit', () => this._handleSubmitCallback());
   }
 
   submit() {
-    this._submit.addEventListener('submit', this._handleSubmitCallback);
+    this._submit.addEventListener('click', this._handleSubmitCallback);
     console.log(this._handleSubmitCallback)
   }
 
+  loadingInProcess() {
+    this._submit.textContent = 'Удаление...'
+  }
 
+  loadingDone() {
+    this._submit.textContent = 'Да';
+  }
+
+  disableSubmitBtn() {
+    this._submit.disabled = true;
+  }
+
+  enableSubmitBtn() {
+    this._submit.disabled = false;
+  }
 }
 
 

@@ -86,10 +86,22 @@ export default class Api {
     });
   }
 
-
   sendLike(data) {
     return fetch(`${this._url}cards/${data._id}/likes`, {
       method: 'PUT',
+      headers: this._headers,
+    })
+    .then(res => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(`Error: ${res.status}`)
+    });
+  }
+
+  deleteLike(data) {
+    return fetch(`${this._url}cards/${data._id}/likes`, {
+      method: 'DELETE',
       headers: this._headers,
     })
     .then(res => {

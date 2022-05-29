@@ -6,6 +6,7 @@ export default class PopupWithForm extends Popup{
     this._inputsList = this._popup.querySelectorAll('.popup__input');
     this._form = this._popup.querySelector('.popup__form');
     this._apiCallBack = apiCallBack;
+    this._submitBtn = this._popup.querySelector('.popup__save-button')
   }
 
   //метод который собирает данные всех полей формы
@@ -33,6 +34,14 @@ export default class PopupWithForm extends Popup{
   submitHandler = () => {
     const info = this._getInputValues(); //берем собранные данные и сохраняем в переменную
     this._apiCallBack(info); //Вызываю метод apiCallBack
+  }
+
+  loadingInProcess() {
+    this._submitBtn.textContent = 'Сохранение...';
+  }
+
+  loadingDone(text) {
+    this._submitBtn.textContent = text;
   }
 
 }

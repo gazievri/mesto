@@ -1,20 +1,16 @@
 //отвечает за отрисовку элементов на странице
 
 export default class Section {
-  constructor( { renderer }, containerSelector, api ){
+  constructor(renderer, containerSelector){
     this._renderer = renderer; //это функция, которая отвечает за создание и отрисовку данных на странице
     this._container = document.querySelector(containerSelector); //селектор контейнера, в который нужно добавлять созданные элементы.
-    this._api = api;
   }
 
   //отвечает за отрисовку всех элементов.
-  rendererCards() {
-    const data = this._api.getCards();
-    data.then((res) => {
-      const items = res;
-      items.forEach((item) => {
-        this._renderer(item);
-      })
+  rendererCards(cards) {
+    cards.forEach(card => {
+      this.addItem(this._renderer(card));
+      return card
     })
   }
 

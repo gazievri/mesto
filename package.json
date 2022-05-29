@@ -21,9 +21,15 @@
   "homepage": "https://github.com/gazievri/mesto#readme",
   "devDependencies": {
     "@babel/core": "^7.17.10",
+    "@babel/plugin-transform-runtime": "^7.18.2",
     "@babel/preset-env": "^7.17.10",
     "autoprefixer": "^10.4.7",
+    "babel-core": "^6.26.3",
     "babel-loader": "^8.2.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
     "cssnano": "^5.1.7",
@@ -36,6 +42,7 @@
     "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
+    "@babel/runtime": "^7.18.3",
     "core-js": "^3.22.5"
   }
 }
