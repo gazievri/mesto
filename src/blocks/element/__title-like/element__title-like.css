@@ -13,4 +13,6 @@
 .element__title-like:hover {
   opacity: 0.5;
   cursor: pointer;
+  transform-origin: bottom;
+  transform: scale(1.1);
 }

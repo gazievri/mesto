@@ -9,6 +9,15 @@ import Api from './components/Api.js';
 import PopupWithSubmit from './components/PopupWithSubmit.js';
 import { formElementProfile, formNewPlace, formAvatarEdit, cardTemplate, settings, myToken, profileOpenBtn, cardAddBtn, avatarEditBtn, nameInput, jobInput} from './utils/constants.js';
 
+function hidePreloader() {
+  document.body.classList.add('loaded_hiding');
+  setTimeout(function () {
+    document.body.classList.add('loaded');
+    document.body.classList.remove('loaded_hiding');
+  }, 500);
+}
+
+
 let ownerId;
 
 //Формы из класса FormValidator
@@ -39,7 +48,7 @@ Promise.all([
   initialCardsList.rendererCards(cards);
   user.setUserInfo(userInfo);
   user.setUserAvatar(userInfo);
-
+  hidePreloader();
 })
 .catch(err => console.log(err))
 

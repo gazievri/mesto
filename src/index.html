@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--
-    <link rel="stylesheet" href="./pages/index.css">
-    -->
     <title>Место</title>
 </head>
 
 <body class="body">
+
+  <div class="preloader">
+    <div class="preloader__image"></div>
+  </div>
 
   <div class="root">
 
@@ -20,7 +21,7 @@
 
     <main>
       <section class="profile">
-        <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="Жак Ив Кусто">
+        <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="">
         <button class="profile__avatar-edit" type="button"></button>
         <div class="profile__profile-info">
           <div class="profile__title-and-button">
