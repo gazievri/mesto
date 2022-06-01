@@ -10,13 +10,13 @@ import PopupWithSubmit from './components/PopupWithSubmit.js';
 import { formElementProfile, formNewPlace, formAvatarEdit, cardTemplate, settings, myToken, profileOpenBtn, cardAddBtn, avatarEditBtn, nameInput, jobInput} from './utils/constants.js';
 
 function hidePreloader() {
-  document.body.classList.add('loaded_hiding');
-  setTimeout(function () {
-    document.body.classList.add('loaded');
-    document.body.classList.remove('loaded_hiding');
+  const preloader = document.querySelector('.preloader');
+  preloader.classList.add('preloader_status_hiding');
+  setTimeout(function() {
+    preloader.classList.add('preloader_status_hidden');
+    preloader.classList.remove('preloader_status_hiding');
   }, 500);
 }
-
 
 let ownerId;
 

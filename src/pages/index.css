@@ -4,7 +4,9 @@
 @import url(../blocks/root/root.css);
 
 @import url(../blocks/preloader/preloader.css);
-@import url(../blocks/preloader/preloader__image/preloader__image.css);
+@import url(../blocks/preloader/__image/preloader__image.css);
+@import url(../blocks/preloader/_status/preloader_status_hidden.css);
+@import url(../blocks/preloader/_status/preloader_status_hiding.css);
 
 @import url(../blocks/header/header.css);
 

@@ -13,7 +13,3 @@
   transition: 0.3s opacity;
   opacity: 0;
 }
-
-.loaded .preloader {
-  display: none;
-}
