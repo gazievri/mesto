@@ -9,7 +9,7 @@ import Api from './components/Api.js';
 import PopupWithSubmit from './components/PopupWithSubmit.js';
 import { formElementProfile, formNewPlace, formAvatarEdit, cardTemplate, settings, myToken, profileOpenBtn, cardAddBtn, avatarEditBtn, nameInput, jobInput} from './utils/constants.js';
 
-function hidePreloader() {
+const hidePreloader = () => {
   const preloader = document.querySelector('.preloader');
   preloader.classList.add('preloader_status_hiding');
   setTimeout(function() {
@@ -36,18 +36,19 @@ const api = new Api ({
 
 Promise.all([
   api.getInfo(),
-  api.getCards()
+  api.getCards(),
 ])
 .then(value => {
   const userInfo = value[0];
+  user.setUserAvatar(userInfo);
   const cards = value[1];
   ownerId = userInfo._id;
   cards.forEach(card => {
     card.ownerId = userInfo._id;
   });
   initialCardsList.rendererCards(cards);
+  //user.setUserAvatar(userInfo);
   user.setUserInfo(userInfo);
-  user.setUserAvatar(userInfo);
   hidePreloader();
 })
 .catch(err => console.log(err))

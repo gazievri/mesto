@@ -9,7 +9,3 @@
   background: url('../../../images/preloader.gif') no-repeat 50% 50%;
 }
 
-.loaded_hiding .preloader {
-  transition: 0.3s opacity;
-  opacity: 0;
-}
